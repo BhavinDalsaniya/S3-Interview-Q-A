@@ -3,11 +3,12 @@
 # AWS S3 Versioning and CRR (Cross Region Replication) Notes
 
 1) Versioning Hands-on
-a)Create bucket → Enable versioning → Suspend versioning → Upload object → Delete object → Can you bring it back?
+
+# a)Create bucket → Enable versioning → Suspend versioning → Upload object → Delete object → Can you bring it back?
 ✅ No, you cannot bring it back.
 Reason: When versioning is suspended, S3 treats objects like non-versioned ones. On delete, the object is permanently gone unless a version ID exists (but here, none was created under suspended versioning).
 
-b)Create bucket → Enable versioning → Upload file1 → Suspend versioning → Upload file2 → Delete file2 → Can you bring file2 back?
+# b)Create bucket → Enable versioning → Upload file1 → Suspend versioning → Upload file2 → Delete file2 → Can you bring file2 back?
 ✅ No, you cannot bring file2 back.
 Reason: After suspending versioning, newly uploaded file2 has no version ID. Deleting it deletes it completely.
 
